@@ -1,15 +1,16 @@
 import Home from '../screens/Home/Home';
+import Auth from '../screens/Auth/Auth';
 
 const routes = [
   {
-    path: '/',
+    route: '/',
     component: Home,
     isAuth: true
   },
   {
-    path: '/auth/:type',
-    component: 'Auth',
-    isAuth: false
+    route: '/auth',
+    component: Auth,
+    isAuth: true
   }
 ];
 

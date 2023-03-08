@@ -1,7 +1,7 @@
-import Routes from './routes/Routes';
+import Router from './routes/Routes';
 
 function App() {
-  return <Routes />;
+  return <Router />;
 }
 
 export default App;

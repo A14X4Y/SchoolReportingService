@@ -3,14 +3,28 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { routes } from './routes.data';
 import useAuth from '../hooks/useAuth';
 import NotFound from '../screens/NotFound/NotFound';
-import Auth from '../screens/Auth/Auth';
 
 const Router = () => {
   const { isAuth } = useAuth();
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/auth" element={<Auth />} />
+        {routes.map((route, index) => {
+          console.log(route, index);
+          {
+            /* if (route.isAuth && !isAuth) {
+            return false;
+          } */
+          }
+
+          return (
+            <Route
+              key={route.path}
+              path={route.path}
+              element={<route.component />}
+            />
+          );
+        })}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

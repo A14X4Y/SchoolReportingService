@@ -1,41 +1,42 @@
 import React from 'react';
-import { Menu } from 'antd';
+import { Layout, Menu } from 'antd';
 import {
   HomeOutlined,
-  ProfileOutlined,
+  AppstoreOutlined,
   SettingOutlined
 } from '@ant-design/icons';
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <Menu
-      mode="horizontal"
+    <Layout
       style={{
-        height: '100vh',
         display: 'flex',
+        alignItems: 'center',
         justifyContent: 'center',
-        alignItems: 'center'
+        height: '100vh'
       }}
     >
-      <Menu.Item
-        key="home"
-        style={{ background: 'red', fontSize: '3rem', padding: '0 2rem' }}
+      <Menu
+        mode="horizontal"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          width: '100%',
+          alignItems: 'center'
+        }}
       >
-        <HomeOutlined />
-        Home
-      </Menu.Item>
-      <Menu.Item key="profile" style={{ fontSize: '3rem', padding: '0 2rem' }}>
-        <ProfileOutlined />
-        Profile
-      </Menu.Item>
-      <Menu.Item
-        key="settings"
-        style={{ background: 'green', fontSize: '3rem', padding: '0 2rem' }}
-      >
-        <SettingOutlined />
-        Settings
-      </Menu.Item>
-    </Menu>
+        <NavLink>
+          <Menu.Item key="home">Home</Menu.Item>
+        </NavLink>
+        <NavLink to="fg">
+          <Menu.Item key="apps">ФГ</Menu.Item>
+        </NavLink>
+        <NavLink to="/gia">
+          <Menu.Item key="settings">ГИА</Menu.Item>
+        </NavLink>
+      </Menu>
+    </Layout>
   );
 };
 

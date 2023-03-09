@@ -41,6 +41,7 @@ const Auth = () => {
             type="password"
             placeholder="Password"
             allowClear={true}
+            
           />
         </Form.Item>
 
